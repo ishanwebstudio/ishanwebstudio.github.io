@@ -9,12 +9,7 @@ if (menuToggle && navMenu) {
 
     menuToggle.addEventListener("click", () => {
         navMenu.classList.toggle("active");
-
-        if (navMenu.classList.contains("active")) {
-            menuToggle.textContent = "✕";
-        } else {
-            menuToggle.textContent = "☰";
-        }
+        menuToggle.classList.toggle("open");
     });
 
     // Close menu after clicking a link
@@ -23,7 +18,7 @@ if (menuToggle && navMenu) {
     navLinks.forEach((link) => {
         link.addEventListener("click", () => {
             navMenu.classList.remove("active");
-            menuToggle.textContent = "☰";
+            menuToggle.classList.remove("open");
         });
     });
 }
